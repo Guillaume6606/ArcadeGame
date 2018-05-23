@@ -53,16 +53,24 @@ class Player extends Entities {
 
     switch (key) {
       case 'left':
+      if(player.x>0){
         player.x -= 101;
+      }
         break;
       case 'up':
+      if (player.y>0){
         player.y -= 80;
+      }
         break;
       case 'right':
+      if(player.x<350){
         player.x += 101;
+      }
         break;
       case 'down':
+      if(player.y<350){
         player.y += 80;
+      }
         break;
 
     }
