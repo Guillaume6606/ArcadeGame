@@ -41,7 +41,7 @@ class Player extends Entities {
     this.y = 380;
     this.sprite = 'images/char-boy.png';
   }
-  update(){
+  update(dt){
 
   }
 
@@ -49,7 +49,23 @@ class Player extends Entities {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
 
-  handleInput() {
+  handleInput(key) {
+
+    switch (key) {
+      case 'left':
+        player.x -= 101;
+        break;
+      case 'up':
+        player.y -= 80;
+        break;
+      case 'right':
+        player.x += 101;
+        break;
+      case 'down':
+        player.y += 80;
+        break;
+
+    }
 
   }
 
