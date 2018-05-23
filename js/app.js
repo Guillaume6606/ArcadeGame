@@ -167,6 +167,10 @@ function checkVictory() {
     $('#victoryMessage').text(`You managed to beat the game`);
     $('.popup-close').click(function(){
       $('#popup').addClass('hidden');
+      player.x = 200;
+      player.y = 380;
+      victory = 0;
+
     });
   };
 }
