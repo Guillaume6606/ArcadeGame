@@ -9,7 +9,7 @@ let victory = 0;
   **/
 
 class Entities {
-  constructor(x = 0,y = 0) {
+  constructor(x = 0,y = 50) {
     this.destination
     this.x = x;
     this.y = y;
@@ -45,14 +45,14 @@ class Enemy extends Entities {
 
       //We set the movement speed
 
-      this.x += 60*dt;
+      this.x += 80*dt;
 
       //If an enemy has reached the end of its path, make it start anew from a
       // random point on the x-axis and y-axis so that enemies arrive on
       // different rows and at different moments.
     } else {
-      this.x = -Math.floor(Math.random()*2000);
-      this.y = 50 + Math.floor(Math.random()*4 + 1)*box_height;
+      this.x = -Math.floor(Math.random()*1500);
+      this.y = 50 + Math.floor(Math.random()*3)*box_height;
     }
 
   };
@@ -144,7 +144,7 @@ const player = new Player(1,1);
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-// Checks whether the player is within the range of an enemy. if it is the case,
+// Checks whether the player touches an enemy. if it is the case,
 // resets the players position.
 
 function checkCollision(x,y) {

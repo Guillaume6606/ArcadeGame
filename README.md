@@ -16,6 +16,8 @@ For detailed instructions on how to get started, check out this [guide](https://
 
 ## Instructions
 
+To use the game, place the document with the files on your computer and open the index.html file in the browser of your choice (developed especially for Firefox and Google Chrome, so if any stability issue was to happen, use these browsers.)
+
 In order to play, you only need to  use the directional keys to control the player.
 Your goal is simple: reach the water row at the top of the screen without getting touched by the moving enemies.
 
