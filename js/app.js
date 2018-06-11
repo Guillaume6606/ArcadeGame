@@ -10,10 +10,10 @@ let victory = 0;
 
 class Entities {
   constructor(x = 0,y = 50) {
-    this.destination
+    this.destination;
     this.x = x;
     this.y = y;
-    this.sprite;
+    this.sprite ='';
   }
 }
 
@@ -25,6 +25,7 @@ class Enemy extends Entities {
       **/
     constructor(x,y) {
       super(x,y);
+      this.speed = 1 + 2*(Math.random());
       this.destination = 500;
 
     // The image/sprite for our enemies, this uses
@@ -45,7 +46,7 @@ class Enemy extends Entities {
 
       //We set the movement speed
 
-      this.x += 80*dt;
+      this.x += this.speed*80*dt;
 
       //If an enemy has reached the end of its path, make it start anew from a
       // random point on the x-axis and y-axis so that enemies arrive on
@@ -55,12 +56,12 @@ class Enemy extends Entities {
       this.y = 50 + Math.floor(Math.random()*3)*box_height;
     }
 
-  };
+  }
   // Draw the enemy on the screen, required method for game
   render() {
       ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  };
-};
+  }
+}
 
 // The class that determines the characteristics of the player. It extends
 // Entities.
@@ -153,7 +154,7 @@ function checkCollision(x,y) {
       player.x = 200;
       player.y = 380;
     }
-  })
+  });
 }
 
 // Checks whether the player has reached his objective, i.e. the water row. In
@@ -163,16 +164,16 @@ function checkVictory() {
   if ((player.y <= 40) && (victory !=1)) {
     victory = 1;
     console.log('you won');
-    $('#popup').removeClass('hidden');
-    $('#victoryMessage').text(`You managed to beat the game`);
+    $('.popup').removeClass('hidden');
+    $('.victoryMessage').text(`You managed to beat the game`);
     $('.popup-close').click(function(){
-      $('#popup').addClass('hidden');
+      $('.popup').addClass('hidden');
       player.x = 200;
       player.y = 380;
       victory = 0;
 
     });
-  };
+  }
 }
 
 
